@@ -15,7 +15,7 @@
 {
 
     NSArray *rankStrings = [PlayingCard rankStrings];
-    return [rankStrings[self.rank] stringByAppendingString:self.suit];
+    return [[rankStrings[self.rank] stringByAppendingString:self.suit]stringByAppendingString:self.color];
     
 }
 
@@ -38,6 +38,15 @@
 - (NSString *)suit
 {
     return _suit ? _suit : @"?";
+}
+
+- (void)setColor:(NSString *)color
+{
+    if ([_suit  isEqual: @"♥︎"] || [_suit  isEqual: @"♦︎"])
+        _color = @"r";
+    else
+        _color = @"b";
+        
 }
 
 + (NSArray *)rankStrings

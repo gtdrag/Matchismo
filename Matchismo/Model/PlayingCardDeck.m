@@ -17,11 +17,13 @@
     
     if(self)
     {
+        NSString *color = @"";
         for (NSString *suit in [PlayingCard validSuits ]){
             for (NSUInteger rank=1; rank<= [PlayingCard maxRank]; rank++){
                 PlayingCard *card = [[PlayingCard alloc] init];
                 card.rank = rank;
                 card.suit = suit;
+                card.color = color;
                 [self addcard:card];
             }
         

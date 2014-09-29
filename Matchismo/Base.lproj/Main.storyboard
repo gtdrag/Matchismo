@@ -16,7 +16,7 @@
                                 <rect key="frame" x="128" y="236" width="64" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="A♣︎" backgroundImage="card-front">
+                                <state key="normal" backgroundImage="card-back">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,7 +44,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="card-front" width="128" height="192"/>
+        <image name="card-back" width="128" height="192"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

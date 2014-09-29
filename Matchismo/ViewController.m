@@ -43,11 +43,21 @@
                           forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     }else {
+        
         [sender setBackgroundImage:[UIImage imageNamed:@"card-front"]forState:UIControlStateNormal];
         
-        [sender setTitle:[self.deck drawRandomCard].contents forState:UIControlStateNormal];
+        NSMutableString *str = [NSMutableString stringWithString:[self.deck drawRandomCard].contents];
+        NSString *color = [str substringFromIndex: [str length] - 1];
         
-       // NSLog(@"%@",[self.deck drawRandomCard].contents);
+        [str deleteCharactersInRange:NSMakeRange([str length]-1, 1)];
+        
+        [sender setTitle:str forState:UIControlStateNormal];
+        
+        if([color isEqualToString:@"r"])
+            [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        else
+          [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
         
     }
     self.flipCount++;

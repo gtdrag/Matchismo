@@ -10,12 +10,32 @@
 
 @implementation PlayingCard
 
+- (int)match:(NSArray *)otherCards
+{
+    int score = 0;
+    if([otherCards count] ==1){
+        PlayingCard *otherCard = [otherCards firstObject];
+        if([self.suit isEqualToString:otherCard.suit]){
+            score = 1;
+        }else if(self.rank == otherCard.rank){
+            score = 4;
+        }
+        
+    }
+    
+    
+    return score;
+    
+}
+
+
+
 // supporting the SuperClass's contents property (the declaration is inherited from the superclass)
 - (NSString *) contents
 {
 
     NSArray *rankStrings = [PlayingCard rankStrings];
-    return [[rankStrings[self.rank] stringByAppendingString:self.suit]stringByAppendingString:self.color];
+    return [rankStrings[self.rank] stringByAppendingString:self.suit];
     
 }
 
